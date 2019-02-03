@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import './HeaderNav.scss'
-import { Menu, Image, Container, Label, Input, Form } from 'semantic-ui-react'
-import logo from '../../assets/images/logo_wykop.png'
+import './HeaderNav.scss';
+import { Menu, Image, Container, Label, Input, Form } from 'semantic-ui-react';
+import logo from '../../assets/images/logo_wykop.png';
 
 class HeaderNav extends Component {
     state = { 
@@ -21,7 +21,7 @@ class HeaderNav extends Component {
             <Menu pointing secondary borderless className='nav-menu' fixed='top'>
                 <Container>
                     <Menu.Item className='logo' name='Logo' active={activeItem === 'Logo'} onClick={this.handleItemClick}>
-                        <Image src={logo} size='tiny' />
+                        <Image src={logo} width='93'/>
                     </Menu.Item>
            
                     { this.state.searchBar ? 

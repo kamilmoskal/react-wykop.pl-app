@@ -4,7 +4,7 @@
     margin-top: $HeaderNav-height;
     width:100%;
     background-color: $white;
-    height:40px;
+    white-space: nowrap;
     .tag-list{
         padding:0;
         margin:0;
@@ -14,7 +14,7 @@
         color: rgb(149, 165, 166);
         font-size: 13px;
         padding: 10px;
-        float:left;
+        display: inline-block;
         &:hover{
             cursor: pointer;
             color: $primary-color-hover;

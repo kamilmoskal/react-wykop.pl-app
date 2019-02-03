@@ -1,0 +1,95 @@
+@import '../../styles/shared.scss';
+
+.news-preview {
+    display: grid;
+    grid: 127px / 70px 190px auto;
+    margin-top: 4px;
+    background-color: $white;
+    padding: 10px 0;
+
+    .vote-counter{
+        grid-row: 1 / 2;
+        grid-column: 1 / 2;
+        text-align: center;
+
+        &__number{
+            display: block;
+            color: $secondary-color;
+            font-size:13px;
+            font-weight: 700;
+            border: 3px solid $primary-color;
+            border-radius:14px;
+            padding:7px 0;
+            margin:0 16% 6% 16%;
+        }
+        &__name{
+            color: $white;
+            font-size:11px;
+            background-color: $primary-color;
+            padding:5px 8px;
+        }
+    }
+    .image-container{
+        grid-row: 1 / 2;
+        grid-column: 2 / 3;
+    }
+    .news-info{
+        grid-row: 1 / 2;
+        grid-column: 3 / 4;
+        font-size: 13px;
+        padding:0 10px;
+
+        &__title{
+            font-size:16px;
+            font-weight: 700;
+            color: $primary-color;
+            &:hover{
+                cursor: pointer;
+                color: $primary-color-hover;
+            }
+        }
+        &__data{
+            span:first-child{
+                color: $grey;
+                &:hover{
+                    cursor: pointer;
+                    color: $secondary-color;
+                }
+            }
+            span:not(:first-child), .ui.icon.button{
+                color: $grey;
+                padding: 4px 4px;
+                margin: 0 4px;
+                border:1px solid $white;
+                background-color: unset;
+
+                &:hover{
+                    cursor: pointer;
+                    color: $primary-color;
+                    border:1px solid rgba($grey, .4);
+                    border-radius: 4px;
+                    background-color: rgba($grey, .1);
+                }
+            }
+        }
+        &__describe{
+            overflow: hidden;
+            line-height: 1.4em;
+            max-height: 2.8em;
+        }
+        &__metadata{
+            color: $grey;
+            span:first-child .ui.icon.button, span:first-child{
+                color: $grey;
+                padding: 4px 4px 4px 0;
+                margin-right:4px;
+                background-color: unset;
+
+                &:hover{
+                    cursor: pointer;
+                    color: $primary-color;
+                }
+            }
+        }
+    }
+}
