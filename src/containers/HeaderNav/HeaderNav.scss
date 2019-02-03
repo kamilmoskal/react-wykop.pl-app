@@ -1,20 +1,22 @@
+@import '../../styles/shared.scss';
+
 .ui.borderless.pointing.secondary.top.fixed.nav-menu{
-    background-color: #4383af;
+    background-color: $primary-color;
     border: none;
     .item{
-        color: white;
+        color: $white;
         height: 100%;
         font-family: Arial, Helvetica, sans-serif;
         font-weight: 700;
         font-size: 13px;
         &:hover{
-            color: #d9e6ef;
+            color: #d9e6ef; 
         }
         &.active{
-            background-color: #2e6e99;
+            background-color: $primary-color-active;
             font-weight: none;
             border-bottom-color:unset;
-            box-shadow: inset 0 -2px 0 white;
+            box-shadow: inset 0 -2px 0 $white;
         }
     }
     .ui.form {
@@ -22,7 +24,7 @@
         margin:auto 0;
     }
     .ui.label{
-        background-color: #2a6393;
+        background-color: rgba($primary-color-hover, .6);
         font-size: 11px;
     }
 }

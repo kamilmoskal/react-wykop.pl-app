@@ -1,0 +1,24 @@
+@import '../../styles/shared.scss';
+
+.tag-bar{
+    margin-top: $HeaderNav-height;
+    width:100%;
+    background-color: $white;
+    height:40px;
+    .tag-list{
+        padding:0;
+        margin:0;
+        list-style: none;
+    }
+    .tag-item{
+        color: rgb(149, 165, 166);
+        font-size: 13px;
+        padding: 10px;
+        float:left;
+        &:hover{
+            cursor: pointer;
+            color: $primary-color-hover;
+            box-shadow: inset 0 -2px 0 $primary-color-hover;
+        }
+    }
+}
