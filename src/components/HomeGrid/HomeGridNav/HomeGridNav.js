@@ -1,10 +1,9 @@
 import React from 'react';
 import './HomeGridNav.scss';
-import { Container, Icon, Button } from 'semantic-ui-react';
+import { Icon, Button } from 'semantic-ui-react';
 
 const HomeGridNav = (props) => {
-  return (
-    <Container>
+    return (
         <div className="home-grid-nav">
             <div className="home-grid-nav__left">
                 <span className='title'>{props.title.toUpperCase()}</span>
@@ -23,8 +22,7 @@ const HomeGridNav = (props) => {
                 </Button>
             </div>
         </div>
-    </Container>
-  )
+    )
 }
 
 export default HomeGridNav

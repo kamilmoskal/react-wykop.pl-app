@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import './NewsPreview.scss';
-import { Container, Image, Button } from 'semantic-ui-react';
+import { Image, Button } from 'semantic-ui-react';
 
 class NewsPreview extends Component {
   render() {
     return (
-      <Container>
         <div className="news-preview">
             <div className="vote-counter">
                 <span className="vote-counter__number">89</span>
@@ -31,7 +30,6 @@ class NewsPreview extends Component {
                 </div>
             </div>
         </div>
-      </Container>
     )
   }
 }
