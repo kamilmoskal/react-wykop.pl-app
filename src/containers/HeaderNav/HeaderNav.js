@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './HeaderNav.scss';
-import { Menu, Image, Container, Label, Input, Form } from 'semantic-ui-react';
+import { Menu, Image, Label, Input, Form } from 'semantic-ui-react';
 import logo from '../../assets/images/logo_wykop.png';
 import { Link } from 'react-router-dom';
 
@@ -20,7 +20,7 @@ class HeaderNav extends Component {
         const { activeItem } = this.state
         return (
             <Menu pointing secondary borderless className='nav-menu' fixed='top'>
-                <Container>
+                <div className="container">
                     <Menu.Item className='logo' name='Logo' active={activeItem === 'Logo'} onClick={this.handleItemClick} as={Link} to='/'>
                         <Image src={logo} width='93'/>
                     </Menu.Item>
@@ -42,12 +42,10 @@ class HeaderNav extends Component {
 
                     <Menu.Menu position='right'>
                         <Menu.Item name='Szukaj' active={activeItem === 'Szukaj'} onClick={this.clickSearch}/>
-
                         <Menu.Item name='Dodaj' active={activeItem === 'Dodaj'} onClick={this.handleItemClick}/>
-
                         <Menu.Item name='Zaloguj się' active={activeItem === 'Zaloguj się'} onClick={this.handleItemClick}/>
                     </Menu.Menu>
-                </Container>
+                </div>
             </Menu>
         )
     }

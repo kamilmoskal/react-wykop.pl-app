@@ -50,10 +50,18 @@
             font-size:16px;
             font-weight: 700;
             color: $primary-color;
+            overflow: hidden;
+            line-height: 1.2em;
+            max-height: 1.2em;
+            
             &:hover{
                 cursor: pointer;
                 color: $primary-color-hover;
             }
+        }
+        &__title.watchmode {
+            font-size:22px;
+            max-height: 2.4em;
         }
         &__data{
             span:first-child{
@@ -79,10 +87,17 @@
                 }
             }
         }
+        &__data.watchmode{
+            padding:5px 0;
+        }
         &__describe{
             overflow: hidden;
-            line-height: 1.4em;
-            max-height: 2.8em;
+            line-height: 1.2em;
+            max-height: 3.6em;
+        }
+        &__describe.watchmode {
+            font-size:16px;
+            max-height: 7.2em;
         }
         &__metadata{
             color: $grey;
@@ -99,4 +114,7 @@
             }
         }
     }
+}
+.news-preview.watchmode{
+    grid: 223px / 70px 298px auto;
 }

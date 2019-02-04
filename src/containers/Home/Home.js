@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './Home.scss';
 import TagNav from '../../components/TagNav/TagNav';
-import { Container } from 'semantic-ui-react';
 import HomeNav from './HomeNav/HomeNav';
 import NewsPreview from '../../components/NewsPreview/NewsPreview';
 import SideBar from '../SideBar/SideBar';
@@ -26,7 +25,7 @@ class Home extends Component {
     }
 
     return (
-      <Container>
+      <div className="container">
         <div className="home-grid">
             {pathname !== '/mikroblog' ? <TagNav/> : null}
             <div className="home-grid__left">
@@ -42,7 +41,7 @@ class Home extends Component {
                 <SideBar pathname={pathname}/>
             </div>
         </div>
-      </Container>
+      </div>
     )
   }
 }

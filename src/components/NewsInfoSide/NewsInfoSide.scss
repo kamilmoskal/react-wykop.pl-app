@@ -1,0 +1,62 @@
+@import '../../styles/shared.scss';
+
+.news-info-side{
+    margin-top: 4px;
+    background-color: $white;
+    padding: 10px;
+
+    & > * {
+        padding:5px;
+    }
+
+    &__date{
+        font-size:13px;
+        color: $black;
+    }
+    &__user{
+        display: grid;
+        grid: auto auto / 40px auto;
+        grid-column-gap: 5px;
+        align-items: end;
+        .ui.image{
+            grid-row: 1 / 3;
+            grid-column: 1 / 2;
+        }
+        .login-name{
+            font-size:13px;
+            font-weight: 700;
+            color: $secondary-color;
+            grid-row: 1 / 2;
+            grid-column: 2 / 3;
+        }
+        .sign-date{
+            font-size:11px;
+            color: $grey;
+            grid-row: 2 / 3;
+            grid-column: 2 / 3;
+        }
+    }
+    &__numbers{
+        display: grid;
+        grid: auto / auto auto auto;
+            font-size: 10px;
+            color: $primary-color;
+            b{
+                font-size: 13px;
+                font-weight: 700;
+                color: $black;
+            }
+        .vote-up{
+            grid-row: 1 / 2;
+            grid-column: 1 / 2;
+        }
+        .vote-down{
+            grid-row: 1 / 2;
+            grid-column: 2 / 3;
+        }
+        .views{
+            grid-row: 1 / 2;
+            grid-column: 3 / 4;
+        }
+    }
+}
