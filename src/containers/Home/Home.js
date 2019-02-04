@@ -4,6 +4,7 @@ import TagNav from '../../components/TagNav/TagNav';
 import HomeNav from './HomeNav/HomeNav';
 import NewsPreview from '../../components/NewsPreview/NewsPreview';
 import SideBar from '../SideBar/SideBar';
+import CommentsItem from '../../components/WatchNewsComments/CommentsItem/CommentsItem';
 
 class Home extends Component {
   render() {
@@ -29,13 +30,28 @@ class Home extends Component {
         <div className="home-grid">
             {pathname !== '/mikroblog' ? <TagNav/> : null}
             <div className="home-grid__left">
+
                 <HomeNav title={`${title} :`} items={items} />
+                {pathname !== '/mikroblog' ?
+                <React.Fragment>
                 <NewsPreview />
                 <NewsPreview />
                 <NewsPreview />
                 <NewsPreview />
                 <NewsPreview />
                 <NewsPreview />
+                </React.Fragment>
+                : null}
+
+                {pathname === '/mikroblog' ?
+                <React.Fragment>
+                <CommentsItem />
+                <CommentsItem />
+                <CommentsItem />
+                <CommentsItem />
+                <CommentsItem />
+                </React.Fragment>
+                : null}
             </div>
             <div className="home-grid__right">
                 <SideBar pathname={pathname}/>

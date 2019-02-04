@@ -4,6 +4,7 @@ import NewsPreview from '../../components/NewsPreview/NewsPreview';
 import SideBar from '../SideBar/SideBar';
 import NewsInfoSide from '../../components/NewsInfoSide/NewsInfoSide';
 import WatchNewsLinked from '../../components/WatchNewsLinked/WatchNewsLinked';
+import WatchNewsComments from '../../components/WatchNewsComments/WatchNewsComments';
 
 class WatchNews extends Component {
   render() {
@@ -13,6 +14,7 @@ class WatchNews extends Component {
                 <div className="watch-news-grid__left">
                     <NewsPreview watchmode={true}/>
                     <WatchNewsLinked />
+                    <WatchNewsComments />
                 </div>
                 <div className="watch-news-grid__right">
                     <NewsInfoSide />

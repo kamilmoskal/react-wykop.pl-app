@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './WatchNewsLinked.scss';
 import { Divider, Icon } from 'semantic-ui-react';
-import WatchNewsLinkedItem from './WatchNewsLinkedItem/WatchNewsLinkedItem';
+import LinkedItem from './LinkedItem/LinkedItem';
 
 export default class WatchNewsLinked extends Component {
     state = {
@@ -24,15 +24,15 @@ export default class WatchNewsLinked extends Component {
         return (
             <div className="watch-news-linked">
                 <Divider />
-                <div className="watch-news-linked__title">POWIĄZANE (4)</div>
+                <div className="watch-news-linked__title">POWIĄZANE (6)</div>
                 <Divider />
                 <div className={`watch-news-linked__items ${divState}`}>
-                    <WatchNewsLinkedItem />
-                    <WatchNewsLinkedItem />
-                    <WatchNewsLinkedItem />
-                    <WatchNewsLinkedItem />
-                    <WatchNewsLinkedItem />
-                    <WatchNewsLinkedItem />
+                    <LinkedItem />
+                    <LinkedItem />
+                    <LinkedItem />
+                    <LinkedItem />
+                    <LinkedItem />
+                    <LinkedItem />
                 </div>
                 <div className="watch-news-linked__show-more" onClick={this.onToggleCollapse}>{buttonTitle} <Icon name={icon}/></div>
             </div>

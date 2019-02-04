@@ -1,0 +1,35 @@
+@import '../../styles/shared.scss';
+
+.watch-news-comments{
+    background-color: $white;
+    
+    .ui.borderless.pointing.secondary.menu{
+        overflow: hidden;
+        padding: 0 10px;
+        box-sizing: border-box;
+        margin: unset;
+        .item.title{
+            padding-left:0;
+            font-size: 13px;
+            font-weight: 700;
+            color: $black;
+        }
+        .item:not(:first-child) {
+            text-transform: lowercase;
+            font-size: 13px;
+            color: $grey;
+            margin-left:5px;
+            &:hover {
+                cursor: pointer;
+                color: $primary-color-hover;
+                box-shadow: inset 0 -2px 0 $primary-color-hover;
+            }
+            &.active{
+                border-bottom-color:unset;
+                box-shadow: inset 0 -2px 0 $primary-color-hover;
+                color:$primary-color-hover;
+            }
+        }
+      
+    }
+}
