@@ -1,0 +1,50 @@
+@import '../../../styles/shared.scss';
+
+.watch-news-linked-item{
+    width: 207px;
+    margin: 5px;
+
+    &__head{
+        display: flex;
+        justify-content: space-between;
+        font-size:13px;
+        font-weight: 700;
+        color: $green;
+        .bars.icon{
+            color: $primary-color;
+            &:hover{
+                cursor: pointer;
+                color: $primary-color-hover;
+            }
+        }
+    }
+    &__img{
+        height:70px;
+        overflow: hidden;
+        transition: all .5 ease-out;
+        &:hover {
+            cursor: pointer;
+            overflow: visible;
+        }
+    }
+    &__title{
+        font-size: 13px;
+        font-weight: 700;
+        color: $black;
+        margin-top:10px;
+        overflow: hidden;
+        line-height: 1.4em;
+        max-height: 2.8em;
+    }
+    &__meta{
+        font-size: 11px;
+        color: $grey;
+        span{
+            color: $primary-color;
+            &:hover{
+                cursor: pointer;
+                color: $primary-color-hover;
+            }
+        }
+    }
+}
