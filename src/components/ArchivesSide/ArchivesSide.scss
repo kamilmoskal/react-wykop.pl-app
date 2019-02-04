@@ -1,0 +1,21 @@
+@import '../../styles/shared.scss';
+
+.archives-side{
+
+    .ui.divider{
+        padding:unset;
+        margin:5px 0;
+        opacity: .6;
+    }
+    .ui.checkbox {
+        display: block;
+
+        label{
+            font-size: 13px;
+            color: $grey;
+        }
+    }
+    .checked{
+        font-weight: 700;
+    }
+}

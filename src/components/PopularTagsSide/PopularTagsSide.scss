@@ -1,0 +1,22 @@
+@import '../../styles/shared.scss';
+
+
+.popular-tags-side{
+    
+    .tag{
+        display: inline-block;
+        margin-right: 2px;
+        font-size: 13px;
+        color: $primary-color;
+        padding: 4px 4px;
+        border:1px solid $white;
+        line-height: 1em;
+        &:hover{
+            cursor: pointer;
+            color: $primary-color-hover;
+            border:1px solid rgba($grey, .4);
+            border-radius: 4px;
+            background-color: rgba($grey, .1);
+        }
+    }
+}

@@ -7,6 +7,11 @@
     .image-container {
         grid-row: 1 / span 2;
         grid-column: 1 / 2;
+        .ui.image{
+            &:hover{
+                cursor: pointer;
+            }
+        }
     }
     .meta-data{
         grid-row: 1 / 2;
@@ -17,6 +22,9 @@
             font-weight: 700;
             color: $grey;
             margin-right: 5px;
+            &:hover{
+                cursor: pointer;
+            }
             &--one{
                 color: $green;
             }
@@ -26,7 +34,11 @@
         }
         &__date{
             font-size: 12px;
-            color: $grey
+            color: $grey;
+            &:hover{
+                cursor: pointer;
+                color: $primary-color;
+            }
         }
     }
     .votes{
