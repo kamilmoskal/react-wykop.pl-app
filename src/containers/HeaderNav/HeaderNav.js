@@ -2,10 +2,11 @@ import React, { Component } from 'react'
 import './HeaderNav.scss';
 import { Menu, Image, Container, Label, Input, Form } from 'semantic-ui-react';
 import logo from '../../assets/images/logo_wykop.png';
+import { Link } from 'react-router-dom';
 
 class HeaderNav extends Component {
     state = { 
-        activeItem: 'Wykopalisko', searchBar: false 
+        activeItem: 'Logo', searchBar: false 
     }
     handleItemClick = (e, { name }) => this.setState({ activeItem: name })
     handleSearchBar = () => { 
@@ -20,7 +21,7 @@ class HeaderNav extends Component {
         return (
             <Menu pointing secondary borderless className='nav-menu' fixed='top'>
                 <Container>
-                    <Menu.Item className='logo' name='Logo' active={activeItem === 'Logo'} onClick={this.handleItemClick}>
+                    <Menu.Item className='logo' name='Logo' active={activeItem === 'Logo'} onClick={this.handleItemClick} as={Link} to='/'>
                         <Image src={logo} width='93'/>
                     </Menu.Item>
            
@@ -31,12 +32,12 @@ class HeaderNav extends Component {
                         </Form.Field>
                     </Form> :
                     <React.Fragment>
-                        <Menu.Item name='Wykopalisko' active={activeItem === 'Wykopalisko'} onClick={this.handleItemClick}>
+                        <Menu.Item name='Wykopalisko' active={activeItem === 'Wykopalisko'} onClick={this.handleItemClick} as={Link} to='/wykopalisko'>
                             Wykopalisko
                             <Label>501</Label>
                         </Menu.Item>
-                        <Menu.Item name='Hity' active={activeItem === 'Hity'} onClick={this.handleItemClick}/>
-                        <Menu.Item name='Mikroblog' active={activeItem === 'Mikroblog'} onClick={this.handleItemClick}/>
+                        <Menu.Item name='Hity' active={activeItem === 'Hity'} onClick={this.handleItemClick} as={Link} to='/hity'/>
+                        <Menu.Item name='Mikroblog' active={activeItem === 'Mikroblog'} onClick={this.handleItemClick} as={Link} to='/mikroblog'/>
                     </React.Fragment>}
 
                     <Menu.Menu position='right'>

@@ -1,11 +1,11 @@
 import React from 'react';
-import './HomeGridNav.scss';
+import './HomeNav.scss';
 import { Icon, Button } from 'semantic-ui-react';
 
-const HomeGridNav = (props) => {
+const HomeNav = (props) => {
     return (
-        <div className="home-grid-nav">
-            <div className="home-grid-nav__left">
+        <div className="home-nav">
+            <div className="home-nav__left">
                 <span className='title'>{props.title.toUpperCase()}</span>
                 {props.items && props.items.map((item, index) => {
                     return (
@@ -13,7 +13,7 @@ const HomeGridNav = (props) => {
                     )
                 })}
             </div>
-            <div className="home-grid-nav__right">
+            <div className="home-nav__right">
                 <Button icon>
                 <Icon name='list'/>
                 </Button>
@@ -25,4 +25,4 @@ const HomeGridNav = (props) => {
     )
 }
 
-export default HomeGridNav
+export default HomeNav;
