@@ -1,7 +1,7 @@
 {
   "main.css": "/react-wykop.pl-app/static/css/main.8b787c67.chunk.css",
-  "main.js": "/react-wykop.pl-app/static/js/main.b0ae865e.chunk.js",
-  "main.js.map": "/react-wykop.pl-app/static/js/main.b0ae865e.chunk.js.map",
+  "main.js": "/react-wykop.pl-app/static/js/main.11bd486d.chunk.js",
+  "main.js.map": "/react-wykop.pl-app/static/js/main.11bd486d.chunk.js.map",
   "static/css/1.de9ba287.chunk.css": "/react-wykop.pl-app/static/css/1.de9ba287.chunk.css",
   "static/js/1.9b94d37f.chunk.js": "/react-wykop.pl-app/static/js/1.9b94d37f.chunk.js",
   "static/js/1.9b94d37f.chunk.js.map": "/react-wykop.pl-app/static/js/1.9b94d37f.chunk.js.map",
@@ -12,6 +12,6 @@
   "static/css/main.8b787c67.chunk.css.map": "/react-wykop.pl-app/static/css/main.8b787c67.chunk.css.map",
   "static/css/1.de9ba287.chunk.css.map": "/react-wykop.pl-app/static/css/1.de9ba287.chunk.css.map",
   "index.html": "/react-wykop.pl-app/index.html",
-  "precache-manifest.1034a8c6bd63d1ba0b9238801142b522.js": "/react-wykop.pl-app/precache-manifest.1034a8c6bd63d1ba0b9238801142b522.js",
+  "precache-manifest.e18f8cb61543840478a217e2497d0001.js": "/react-wykop.pl-app/precache-manifest.e18f8cb61543840478a217e2497d0001.js",
   "service-worker.js": "/react-wykop.pl-app/service-worker.js"
 }

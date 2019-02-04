@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/react-wykop.pl-app/precache-manifest.1034a8c6bd63d1ba0b9238801142b522.js"
+  "/react-wykop.pl-app/precache-manifest.e18f8cb61543840478a217e2497d0001.js"
 );
 
 workbox.clientsClaim();
