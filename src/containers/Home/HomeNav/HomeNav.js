@@ -1,28 +1,34 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './HomeNav.scss';
-import { Icon, Button } from 'semantic-ui-react';
+import { Button, Menu } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 
-const HomeNav = (props) => {
-    return (
-        <div className="home-nav">
-            <div className="home-nav__left">
-                <span className='title'>{props.title.toUpperCase()}</span>
-                {props.items && props.items.map((item, index) => {
+class HomeNav extends Component {
+    state = { 
+        activeLeftItem: 'aktywne', activeRightItem: 'list'
+    }
+    handleLeftItemClick = (e, { name }) => this.setState({ activeLeftItem: name })
+    handleRightItemClick = (e, { icon }) => this.setState({ activeRightItem: icon })
+    render() {
+        const { activeLeftItem } = this.state
+        const { activeRightItem } = this.state
+        return (
+            <Menu pointing secondary borderless className="home-nav" >
+                <Menu.Item className='title'>{this.props.title.toUpperCase()}</Menu.Item>
+                {this.props.items && this.props.items.map((item, index) => {
                     return (
-                        <span className='item' key={index}>{item}</span>
+                        <Menu.Item key={index} name={item} active={activeLeftItem === item} onClick={this.handleLeftItemClick} as={Link} to={{/* `/wykopalisko/${item}` */}}/>
                     )
                 })}
-            </div>
-            <div className="home-nav__right">
-                <Button icon>
-                <Icon name='list'/>
-                </Button>
-                <Button icon>
-                <Icon name='block layout'/>
-                </Button>
-            </div>
-        </div>
-    )
+                <Menu.Menu position='right'>
+                    <Button icon='list' active={activeRightItem === 'list'} onClick={this.handleRightItemClick}/>
+                    <Button icon='block layout' active={activeRightItem === 'block layout'} onClick={this.handleRightItemClick}/>
+                </Menu.Menu>
+            </Menu>
+        )
+    }
 }
 
 export default HomeNav;
+
+           

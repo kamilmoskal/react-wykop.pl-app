@@ -1,41 +1,48 @@
 @import '../../../styles/shared.scss';
 
-.home-nav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.ui.borderless.pointing.secondary.home-nav{
     background-color: $white;
+    margin: unset;
     margin-top:4px;
-    white-space: nowrap;
+    border:none;
+    overflow: hidden;
 
-    &__left{
-        .title{
-            font-weight: 700;
-            font-size: 13px;
-            padding:10px;
-            color: $black;
+    .item.title{
+        font-weight: 700;
+        font-size: 13px;
+        color: $black;
+    }
+    .item:not(:first-child) {
+        text-transform: lowercase;
+        font-size: 13px;
+        color: $grey;
+        margin-left:5px;
+        &:hover {
+            cursor: pointer;
+            color: $primary-color-hover;
+            box-shadow: inset 0 -2px 0 $primary-color-hover;
         }
-        .item{
-            padding:10px;
-            font-size: 13px;
-            color: $grey;
-
-            &:hover {
-                cursor: pointer;
-                color: $primary-color-hover;
-                box-shadow: inset 0 -2px 0 $primary-color-hover;
-            }
+        &.active{
+            border-bottom-color:unset;
+            box-shadow: inset 0 -2px 0 $primary-color-hover;
+            color:$primary-color-hover;
         }
     }
-    &__right{
+    .right.menu{
         .ui.icon.button{
             background-color: unset;
             border-radius: unset;
+            color: $grey;
 
             &:hover{
                 cursor: pointer;
                 color: $primary-color-hover;
                 box-shadow: inset 0 -2px 0 $primary-color-hover;
+            }
+            &.active{
+                border-bottom-color:unset;
+                box-shadow: inset 0 -2px 0 $primary-color-hover;
+                color:$primary-color-hover;
             }
         }
     }
