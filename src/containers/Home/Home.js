@@ -7,11 +7,11 @@ import SideBar from '../SideBar/SideBar';
 import CommentsItem from '../../components/CommentsItem/CommentsItem';
 import PaginationBar from '../../components/PaginationBar/PaginationBar';
 import { connect } from 'react-redux';
-import { getNews } from '../../actions/getNewsAction';
+import { getNewsList } from '../../actions/getNewsListAction';
 
 class Home extends Component {
   componentDidMount(){
-    this.props.getNews(); 
+    this.props.getNewsList(); 
   }
   render() {
     const { pathname } = this.props.location
@@ -41,12 +41,12 @@ class Home extends Component {
                 <HomeNav title={`${title} :`} items={items} />
                 {pathname !== '/mikroblog' ?
                 <React.Fragment>
-                { newsList && newsList.slice(0, 5).map((news, index) => {
-                  return(
-                    <NewsPreview news={news} key={index}/>
-                  )
-                })}
-                <PaginationBar />
+                  { newsList && newsList.slice(0, 5).map((news, index) => {
+                    return(
+                      <NewsPreview news={news} key={index}/>
+                    )
+                  })}
+                  <PaginationBar />
                 </React.Fragment>
                 : null}
 
@@ -78,7 +78,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-      getNews: () => { dispatch(getNews()) },
+      getNewsList: () => { dispatch(getNewsList()) },
   }
 }
 

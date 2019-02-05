@@ -6,28 +6,45 @@ import NewsInfoSide from '../../components/NewsInfoSide/NewsInfoSide';
 import WatchNewsLinked from '../../components/WatchNewsLinked/WatchNewsLinked';
 import WatchNewsComments from '../../components/WatchNewsComments/WatchNewsComments';
 import PaginationBar from '../../components/PaginationBar/PaginationBar';
+import { connect } from 'react-redux';
+import { getSpecificNews } from '../../actions/getSpecificNewsAction';
 
 class WatchNews extends Component {
-    
-  render() {
-      console.log(this.props)
-    return (
-        <div className="container">
-            <div className="watch-news-grid">
-                <div className="watch-news-grid__left">
-                    {/* <NewsPreview watchmode={true}/> */}
-                    <WatchNewsLinked />
-                    <WatchNewsComments />
-                    <PaginationBar />
-                </div>
-                <div className="watch-news-grid__right">
-                    <NewsInfoSide />
-                    <SideBar />
+    componentDidMount(){
+        this.props.getSpecificNews(this.props.match.params.id); 
+    }
+    render() {
+        const { newsItem } = this.props
+        return (
+            
+            <div className="container">
+                <div className="watch-news-grid">
+                    <div className="watch-news-grid__left">
+                        {newsItem && <NewsPreview news={newsItem} watchmode={true}/>}
+                        <WatchNewsLinked />
+                        <WatchNewsComments />
+                        <PaginationBar />
+                    </div>
+                    <div className="watch-news-grid__right">
+                        <NewsInfoSide />
+                        <SideBar />
+                    </div>
                 </div>
             </div>
-        </div>
-    )
-  }
+        )
+    }
 }
 
-export default WatchNews;
+const mapStateToProps = (state) => {
+    return {
+       newsItem: state.newsItem
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        getSpecificNews: (id) => { dispatch(getSpecificNews(id)) },
+    }
+  }
+
+export default connect(mapStateToProps, mapDispatchToProps)(WatchNews);

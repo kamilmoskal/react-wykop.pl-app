@@ -1,4 +1,4 @@
-export const getNews = () => {
+export const getNewsList = () => {
     return (dispatch) => {
     
         fetch('https://a2.wykop.pl/Links/Promoted/1/appkey/poow9X4hli')
