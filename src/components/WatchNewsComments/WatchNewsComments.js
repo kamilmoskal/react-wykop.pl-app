@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './WatchNewsComments.scss';
 import { Menu } from 'semantic-ui-react';
-import CommentsItem from './CommentsItem/CommentsItem';
+import CommentsItem from '../CommentsItem/CommentsItem';
 
 class WatchNewsComments extends Component {
     state = { 

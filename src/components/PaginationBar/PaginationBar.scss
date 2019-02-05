@@ -1,0 +1,34 @@
+@import '../../styles/shared.scss';
+
+.pagination-bar{
+    background-color: $white;
+    margin-top:4px;
+    padding: 5px;
+    box-sizing: border-box;
+    .ui.pagination.menu{
+        border:none;
+        border-right-color: unset;
+        border-color: none;
+        box-shadow: none;   
+
+        .item{
+            font-size: 13px;
+            font-weight: 700;
+            color: $black;
+            border: 1px solid rgba($grey, .4);
+            border-radius: 10px;
+            background-color: rgba($grey, .1);
+            margin-right: 5px;
+            &:before{
+                all:unset;
+            }
+            &:hover{
+                color: $primary-color;
+            }
+        }
+        .active.item{
+            color: $white;
+            background-color: $primary-color;
+        }
+    }
+}

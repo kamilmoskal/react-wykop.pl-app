@@ -4,7 +4,8 @@ import TagNav from '../../components/TagNav/TagNav';
 import HomeNav from './HomeNav/HomeNav';
 import NewsPreview from '../../components/NewsPreview/NewsPreview';
 import SideBar from '../SideBar/SideBar';
-import CommentsItem from '../../components/WatchNewsComments/CommentsItem/CommentsItem';
+import CommentsItem from '../../components/CommentsItem/CommentsItem';
+import PaginationBar from '../../components/PaginationBar/PaginationBar';
 
 class Home extends Component {
   render() {
@@ -40,6 +41,7 @@ class Home extends Component {
                 <NewsPreview />
                 <NewsPreview />
                 <NewsPreview />
+                <PaginationBar />
                 </React.Fragment>
                 : null}
 
@@ -50,6 +52,7 @@ class Home extends Component {
                 <CommentsItem />
                 <CommentsItem />
                 <CommentsItem />
+                <PaginationBar />
                 </React.Fragment>
                 : null}
             </div>

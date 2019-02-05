@@ -5,6 +5,7 @@ import SideBar from '../SideBar/SideBar';
 import NewsInfoSide from '../../components/NewsInfoSide/NewsInfoSide';
 import WatchNewsLinked from '../../components/WatchNewsLinked/WatchNewsLinked';
 import WatchNewsComments from '../../components/WatchNewsComments/WatchNewsComments';
+import PaginationBar from '../../components/PaginationBar/PaginationBar';
 
 class WatchNews extends Component {
   render() {
@@ -15,6 +16,7 @@ class WatchNews extends Component {
                     <NewsPreview watchmode={true}/>
                     <WatchNewsLinked />
                     <WatchNewsComments />
+                    <PaginationBar />
                 </div>
                 <div className="watch-news-grid__right">
                     <NewsInfoSide />
