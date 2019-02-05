@@ -8,12 +8,14 @@ import WatchNewsComments from '../../components/WatchNewsComments/WatchNewsComme
 import PaginationBar from '../../components/PaginationBar/PaginationBar';
 
 class WatchNews extends Component {
+    
   render() {
+      console.log(this.props)
     return (
         <div className="container">
             <div className="watch-news-grid">
                 <div className="watch-news-grid__left">
-                    <NewsPreview watchmode={true}/>
+                    {/* <NewsPreview watchmode={true}/> */}
                     <WatchNewsLinked />
                     <WatchNewsComments />
                     <PaginationBar />

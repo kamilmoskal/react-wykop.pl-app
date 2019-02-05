@@ -6,8 +6,13 @@ import NewsPreview from '../../components/NewsPreview/NewsPreview';
 import SideBar from '../SideBar/SideBar';
 import CommentsItem from '../../components/CommentsItem/CommentsItem';
 import PaginationBar from '../../components/PaginationBar/PaginationBar';
+import { connect } from 'react-redux';
+import { getNews } from '../../actions/getNewsAction';
 
 class Home extends Component {
+  componentDidMount(){
+    this.props.getNews(); 
+  }
   render() {
     const { pathname } = this.props.location
     let title = null;
@@ -25,7 +30,8 @@ class Home extends Component {
       title = 'Mikroblog';
       items = ['wszystkie wpisy','aktywne','gorące dyskusje','ulubione'];
     }
-
+    const { newsList } = this.props
+    //console.log(newsList)
     return (
       <div className="container">
         <div className="home-grid">
@@ -35,12 +41,11 @@ class Home extends Component {
                 <HomeNav title={`${title} :`} items={items} />
                 {pathname !== '/mikroblog' ?
                 <React.Fragment>
-                <NewsPreview />
-                <NewsPreview />
-                <NewsPreview />
-                <NewsPreview />
-                <NewsPreview />
-                <NewsPreview />
+                { newsList && newsList.slice(0, 5).map((news, index) => {
+                  return(
+                    <NewsPreview news={news} key={index}/>
+                  )
+                })}
                 <PaginationBar />
                 </React.Fragment>
                 : null}
@@ -65,4 +70,16 @@ class Home extends Component {
   }
 }
 
-export default Home;
+const mapStateToProps = (state) => {
+    return {
+      newsList: state.newsList
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+      getNews: () => { dispatch(getNews()) },
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

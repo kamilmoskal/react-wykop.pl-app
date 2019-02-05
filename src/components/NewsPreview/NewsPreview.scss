@@ -2,7 +2,7 @@
 
 .news-preview {
     display: grid;
-    grid: 127px / 70px 190px auto;
+    grid: auto / 70px 190px auto;
     margin-top: 4px;
     background-color: $white;
     padding: 10px 0;
@@ -72,6 +72,7 @@
                 }
             }
             span:not(:first-child), .ui.icon.button{
+                display: inline-block;
                 color: $grey;
                 padding: 4px 4px;
                 margin: 0 4px;
@@ -93,7 +94,7 @@
         &__describe{
             overflow: hidden;
             line-height: 1.2em;
-            max-height: 3.6em;
+            max-height: 6.0em;
         }
         &__describe.watchmode {
             font-size:16px;
