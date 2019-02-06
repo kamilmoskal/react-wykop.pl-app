@@ -6,7 +6,7 @@
     padding: 10px;
     box-sizing: border-box;
     display: grid;
-    grid: auto auto auto / 40px auto;
+    grid: auto auto / 40px auto;
     grid-column-gap: 20px;
 
     &__img{
@@ -44,8 +44,11 @@
         border-top: 1px solid rgba($grey, .4);
         margin-bottom:20px;
     }
-    &__answers{
-        grid-row: 3 / 4;
-        grid-column: 2 / 3;
+    /////////////////
+    &--answer{
+        margin-top: 0;
+        padding: 5px 10px 0 70px;
+        grid: auto auto / 30px auto;
+        grid-column-gap: 10px;
     }
 }

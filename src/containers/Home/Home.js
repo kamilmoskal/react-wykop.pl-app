@@ -41,7 +41,7 @@ class Home extends Component {
                 <HomeNav title={`${title} :`} items={items} />
                 {pathname !== '/mikroblog' ?
                 <React.Fragment>
-                  { newsList && newsList.slice(0, 5).map((news, index) => {
+                  { newsList && newsList.slice(0, 8).map((news, index) => {
                     return(
                       <NewsPreview news={news} key={index}/>
                     )

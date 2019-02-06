@@ -1,9 +1,8 @@
 @import '../../styles/shared.scss';
 
 .watch-news-comments{
-    background-color: $white;
-    
     .ui.borderless.pointing.secondary.menu{
+        background-color: $white;
         overflow: hidden;
         padding: 0 10px;
         box-sizing: border-box;

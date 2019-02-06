@@ -22,7 +22,7 @@ class WatchNews extends Component {
                     <div className="watch-news-grid__left">
                         {newsItem && <NewsPreview news={newsItem} watchmode={true}/>}
                         <WatchNewsLinked />
-                        <WatchNewsComments />
+                        {newsItem && <WatchNewsComments news={newsItem}/>}
                         <PaginationBar />
                     </div>
                     <div className="watch-news-grid__right">

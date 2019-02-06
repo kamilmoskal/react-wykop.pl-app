@@ -1,26 +1,31 @@
 import React from 'react';
 import './CommentsItem.scss';
 import { Image } from 'semantic-ui-react';
-import CommentsItemAnswer from './CommentsItemAnswer/CommentsItemAnswer';
+import moment from 'moment';
+import 'moment/locale/pl';
 
-const CommentsItem = () => {
+const CommentsItem = (props) => {
+  const { comment } = props;
+  let userAvatar = comment.author.avatar.indexOf("def") >= 0 ? `${comment.author.avatar.split(',')[0]},q40.png` : `${comment.author.avatar.split(',')[0]},q40.jpg`;
+  
+  console.log(comment)
+
+  let commentAnswer = null;
+  if(comment.id !== comment.parent_id){
+    commentAnswer = 'comments-item--answer';
+  }
+
   return (
-    <div className="comments-item">
+    <div className={['comments-item', commentAnswer].join(' ')}>
       <div className="comments-item__img">
-          <Image src='http://via.placeholder.com/40x40'/>
+          <Image src={userAvatar}/>
       </div>
       <div className="comments-item__head">
-        <div className="comments-item__head__login">moski <span>7 godz. temu</span></div>
-        <div className="comments-item__head__votes">+312</div>
+        <div className="comments-item__head__login">{comment.author.login} <span>{moment(comment.date).startOf('hour').fromNow()}</span></div>
+        <div className="comments-item__head__votes">{comment.vote_count > 0 ? `+${comment.vote_count}`: comment.vote_count}</div>
       </div>
       <div className="comments-item__comment">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      </div>
-      <div className="comments-item__answers">
-          <CommentsItemAnswer />
-          <CommentsItemAnswer />
-          <CommentsItemAnswer />
-          <CommentsItemAnswer />
+          {`${comment.body}`}
       </div>
     </div>
   )

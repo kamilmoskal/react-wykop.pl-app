@@ -13,7 +13,7 @@ class NewsPreview extends Component {
     //const news = this.props.news ? this.props.news : template;
     let newsImage = (news.preview && this.props.watchmode) ? `${news.preview.split(',')[0]},w300h223.jpg` : `${news.preview.split(',')[0]},w207h139.jpg`;
     let newsTags = news.tags ? news.tags.split(' ') : null;
-
+    
     return (
         <div className={['news-preview', watchmode].join(' ')}>
             <div className="vote-counter">
