@@ -52,11 +52,11 @@ class Home extends Component {
 
                 {pathname === '/mikroblog' ?
                 <React.Fragment>
+               {/*  <CommentsItem />
                 <CommentsItem />
                 <CommentsItem />
                 <CommentsItem />
-                <CommentsItem />
-                <CommentsItem />
+                <CommentsItem /> */}
                 <PaginationBar />
                 </React.Fragment>
                 : null}

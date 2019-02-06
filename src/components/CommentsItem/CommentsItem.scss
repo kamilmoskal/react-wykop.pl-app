@@ -19,6 +19,7 @@
         display: flex;
         justify-content: space-between;
         &__login{
+            color: $green;
             font-size:13px;
             font-weight: 700;
             span{
@@ -30,11 +31,15 @@
                     color: $primary-color;
                 }
             }
+            &--1{ color: $secondary-color }
+            &--2{ color: $third-color }
         }
         &__votes{
             font-size: 15px;
             font-weight: 700;
-            color: $green;
+            color: $black;
+            &--plus{ color: $green; }
+            &--minus{ color: $third-color; }
         }
     }
     &__comment{

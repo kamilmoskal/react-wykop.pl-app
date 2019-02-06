@@ -2,6 +2,7 @@ const initState = {
 
 }
 const rootReducer = (state = initState, action) => {
+    
     if (action.type === 'NEWS_LIST'){
         console.log('NEWS_LIST loaded', action.data)    
         //state.newsList = action.data.data;
@@ -19,6 +20,15 @@ const rootReducer = (state = initState, action) => {
             newsItem: action.data.data
         };
     } else if (action.type === 'SPECIFIC_NEWS_ERROR') {
+        console.log('FETCH_DATA_ERROR', action.error)
+        return state;
+    } else if (action.type === 'RELATED_SPECIFIC_NEWS') {
+        console.log('RELATED_SPECIFIC_NEWS loaded', action.data)
+        return {
+            ...state,
+            newsRelated: action.data.data
+        };
+    } else if (action.type === 'RELATED_SPECIFIC_NEWS_ERROR') {
         console.log('FETCH_DATA_ERROR', action.error)
         return state;
     } else {

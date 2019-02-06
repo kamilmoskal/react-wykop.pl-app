@@ -1,6 +1,6 @@
 @import '../../styles/shared.scss';
 
-.watch-news-linked{
+.watch-news-related{
     background-color: $white;
     padding:10px;
     box-sizing: border-box;
@@ -29,7 +29,7 @@
         }
     }
     .collapsed {
-        height: 170px;
+        height: auto;
         overflow: hidden;
     }
     .expanded {
