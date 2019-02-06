@@ -10,8 +10,23 @@ import { connect } from 'react-redux';
 import { getNewsList } from '../../actions/getNewsListAction';
 
 class Home extends Component {
+
+  componentDidUpdate(prevProps){
+    if (prevProps.location.pathname !== this.props.location.pathname) {
+      if (this.props.location.pathname === '/wykopalisko'){
+        this.fetchNewsList('Links/Upcoming/1')
+      } else if (this.props.location.pathname === '/hity'){
+        this.fetchNewsList('Hits/Week')
+      } else if (this.props.location.pathname === '/'){
+        this.fetchNewsList('Links/Promoted/1')
+      }
+    }
+  }
   componentDidMount(){
-    this.props.getNewsList(); 
+    this.fetchNewsList('Links/Promoted/1')
+  }
+  fetchNewsList(which){
+    this.props.getNewsList(which); 
   }
   render() {
     const { pathname } = this.props.location
@@ -41,7 +56,7 @@ class Home extends Component {
                 <HomeNav title={`${title} :`} items={items} />
                 {pathname !== '/mikroblog' ?
                 <React.Fragment>
-                  { newsList && newsList.slice(0, 8).map((news, index) => {
+                  { newsList && newsList.slice(0, 7).map((news, index) => {
                     return(
                       <NewsPreview news={news} key={index}/>
                     )
@@ -78,7 +93,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-      getNewsList: () => { dispatch(getNewsList()) },
+      getNewsList: (which) => { dispatch(getNewsList(which)) },
   }
 }
 
