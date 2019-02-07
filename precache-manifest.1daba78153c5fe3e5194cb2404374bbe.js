@@ -4,16 +4,16 @@ self.__precacheManifest = [
     "url": "/react-wykop.pl-app/static/media/icons.0ab54153.woff2"
   },
   {
-    "revision": "11bd486d8540f80a4efb",
-    "url": "/react-wykop.pl-app/static/css/main.8b787c67.chunk.css"
+    "revision": "0d13f59f7bcbe5a809f9",
+    "url": "/react-wykop.pl-app/static/css/main.fe4b46a3.chunk.css"
   },
   {
     "revision": "a1a749e89f578a49306ec2b055c073da",
     "url": "/react-wykop.pl-app/static/media/brand-icons.a1a749e8.svg"
   },
   {
-    "revision": "9b94d37f068cc61f4276",
-    "url": "/react-wykop.pl-app/static/js/1.9b94d37f.chunk.js"
+    "revision": "155714fb7c23518ecb9a",
+    "url": "/react-wykop.pl-app/static/js/1.155714fb.chunk.js"
   },
   {
     "revision": "42c6b4957ad248998c8c",
@@ -44,8 +44,8 @@ self.__precacheManifest = [
     "url": "/react-wykop.pl-app/static/media/outline-icons.ad97afd3.ttf"
   },
   {
-    "revision": "11bd486d8540f80a4efb",
-    "url": "/react-wykop.pl-app/static/js/main.11bd486d.chunk.js"
+    "revision": "0d13f59f7bcbe5a809f9",
+    "url": "/react-wykop.pl-app/static/js/main.0d13f59f.chunk.js"
   },
   {
     "revision": "faff92145777a3cbaf8e7367b4807987",
@@ -84,11 +84,11 @@ self.__precacheManifest = [
     "url": "/react-wykop.pl-app/static/media/icons.962a1bf3.svg"
   },
   {
-    "revision": "9b94d37f068cc61f4276",
-    "url": "/react-wykop.pl-app/static/css/1.de9ba287.chunk.css"
+    "revision": "155714fb7c23518ecb9a",
+    "url": "/react-wykop.pl-app/static/css/1.d826fdd9.chunk.css"
   },
   {
-    "revision": "41229ab6046fea1e4b502756c9f7295e",
+    "revision": "53d23142c6231bae60751be58bdd0df6",
     "url": "/react-wykop.pl-app/index.html"
   }
 ];
