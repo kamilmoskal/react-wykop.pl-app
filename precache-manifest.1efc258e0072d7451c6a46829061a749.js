@@ -4,16 +4,16 @@ self.__precacheManifest = [
     "url": "/react-wykop.pl-app/static/media/icons.0ab54153.woff2"
   },
   {
-    "revision": "0d13f59f7bcbe5a809f9",
-    "url": "/react-wykop.pl-app/static/css/main.fe4b46a3.chunk.css"
+    "revision": "9d1869dd910e0a46f037",
+    "url": "/react-wykop.pl-app/static/css/main.213f4e1f.chunk.css"
   },
   {
     "revision": "a1a749e89f578a49306ec2b055c073da",
     "url": "/react-wykop.pl-app/static/media/brand-icons.a1a749e8.svg"
   },
   {
-    "revision": "155714fb7c23518ecb9a",
-    "url": "/react-wykop.pl-app/static/js/1.155714fb.chunk.js"
+    "revision": "eb0bee2756b2580bdc72",
+    "url": "/react-wykop.pl-app/static/js/1.eb0bee27.chunk.js"
   },
   {
     "revision": "42c6b4957ad248998c8c",
@@ -28,12 +28,12 @@ self.__precacheManifest = [
     "url": "/react-wykop.pl-app/static/media/flags.9c74e172.png"
   },
   {
-    "revision": "cd6c777f1945164224dee082abaea03a",
-    "url": "/react-wykop.pl-app/static/media/outline-icons.cd6c777f.woff2"
-  },
-  {
     "revision": "ef60a4f6c25ef7f39f2d25a748dbecfe",
     "url": "/react-wykop.pl-app/static/media/outline-icons.ef60a4f6.woff"
+  },
+  {
+    "revision": "cd6c777f1945164224dee082abaea03a",
+    "url": "/react-wykop.pl-app/static/media/outline-icons.cd6c777f.woff2"
   },
   {
     "revision": "701ae6abd4719e9c2ada3535a497b341",
@@ -44,8 +44,8 @@ self.__precacheManifest = [
     "url": "/react-wykop.pl-app/static/media/outline-icons.ad97afd3.ttf"
   },
   {
-    "revision": "0d13f59f7bcbe5a809f9",
-    "url": "/react-wykop.pl-app/static/js/main.0d13f59f.chunk.js"
+    "revision": "9d1869dd910e0a46f037",
+    "url": "/react-wykop.pl-app/static/js/main.9d1869dd.chunk.js"
   },
   {
     "revision": "faff92145777a3cbaf8e7367b4807987",
@@ -84,11 +84,11 @@ self.__precacheManifest = [
     "url": "/react-wykop.pl-app/static/media/icons.962a1bf3.svg"
   },
   {
-    "revision": "155714fb7c23518ecb9a",
-    "url": "/react-wykop.pl-app/static/css/1.d826fdd9.chunk.css"
+    "revision": "eb0bee2756b2580bdc72",
+    "url": "/react-wykop.pl-app/static/css/1.c0d18dc5.chunk.css"
   },
   {
-    "revision": "53d23142c6231bae60751be58bdd0df6",
+    "revision": "8fc3e566e1e98e0a859d52997970d54e",
     "url": "/react-wykop.pl-app/index.html"
   }
 ];
