@@ -7,26 +7,27 @@ import SideBar from '../SideBar/SideBar';
 import CommentsItem from '../../components/CommentsItem/CommentsItem';
 import PaginationBar from '../../components/PaginationBar/PaginationBar';
 import { connect } from 'react-redux';
-import { getNewsList } from '../../actions/getNewsListAction';
+import { getNewsList, getSideNewsList } from '../../actions/getNewsListAction';
 
 class Home extends Component {
 
   componentDidUpdate(prevProps){
     if (prevProps.location.pathname !== this.props.location.pathname) {
-      if (this.props.location.pathname === '/wykopalisko'){
-        this.fetchNewsList('Links/Upcoming/1')
-      } else if (this.props.location.pathname === '/hity'){
-        this.fetchNewsList('Hits/Week')
-      } else if (this.props.location.pathname === '/'){
-        this.fetchNewsList('Links/Promoted/1')
-      }
+      this.fetchNewsList();
     }
   }
   componentDidMount(){
-    this.fetchNewsList('Links/Promoted/1')
+    this.fetchNewsList();
   }
-  fetchNewsList(which){
-    this.props.getNewsList(which); 
+  fetchNewsList(){
+    if (this.props.location.pathname === '/wykopalisko'){
+      this.props.getNewsList('Links/Upcoming/1')
+    } else if (this.props.location.pathname === '/hity'){
+      this.props.getNewsList('Hits/Week')
+    } else if (this.props.location.pathname === '/'){
+      this.props.getNewsList('Links/Promoted/1')
+      this.props.getSideNewsList()
+    }
   }
   render() {
     const { pathname } = this.props.location
@@ -45,8 +46,8 @@ class Home extends Component {
       title = 'Mikroblog';
       items = ['wszystkie wpisy','aktywne','gorące dyskusje','ulubione'];
     }
-    const { newsList } = this.props
-    //console.log(newsList)
+    const { newsList, newsListSide } = this.props
+    
     return (
       <div className="container">
         <div className="home-grid">
@@ -56,7 +57,7 @@ class Home extends Component {
                 <HomeNav title={`${title} :`} items={items} />
                 {pathname !== '/mikroblog' ?
                 <React.Fragment>
-                  { newsList && newsList.slice(0, 7).map((news, index) => {
+                  { newsList && newsList.slice(0, 10).map((news, index) => {
                     return(
                       <NewsPreview news={news} key={index}/>
                     )
@@ -77,7 +78,7 @@ class Home extends Component {
                 : null}
             </div>
             <div className="home-grid__right">
-                <SideBar pathname={pathname}/>
+                <SideBar pathname={pathname} newsListSide={newsListSide}/>
             </div>
         </div>
       </div>
@@ -87,13 +88,15 @@ class Home extends Component {
 
 const mapStateToProps = (state) => {
     return {
-      newsList: state.newsList
+      newsList: state.newsList,
+      newsListSide: state.newsListSide,
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
       getNewsList: (which) => { dispatch(getNewsList(which)) },
+      getSideNewsList: () => { dispatch(getSideNewsList()) }
   }
 }
 

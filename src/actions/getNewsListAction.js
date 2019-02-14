@@ -12,3 +12,18 @@ export const getNewsList = (which) => {
     }
 }
         
+
+export const getSideNewsList = () => {
+    return (dispatch) => {
+    
+        fetch(`https://a2.wykop.pl/Hits/Popular/appkey/poow9X4hli`)
+            .then(response => response.json())
+            .then(data => {
+                dispatch({ type: 'SIDE_NEWS_LIST', data});
+            })
+            .catch(error => {
+                dispatch({ type: 'SIDE_NEWS_LIST_ERROR', error});
+            })
+    }
+}
+     

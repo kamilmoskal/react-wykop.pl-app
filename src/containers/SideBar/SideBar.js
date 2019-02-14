@@ -8,7 +8,7 @@ import PopularTagsSide from '../../components/PopularTagsSide/PopularTagsSide';
 
 class SideBar extends Component {
   render() {
-    const { pathname } = this.props
+    const { pathname, newsListSide } = this.props
     return (
       <React.Fragment>
 
@@ -49,15 +49,11 @@ class SideBar extends Component {
         <div className="side-bar">
           <div className="side-bar__recent-popular">
             <SideBarHeader title="ostatnio popularne"/>
-            <NewsPreviewSide />
-            <NewsPreviewSide />
-            <NewsPreviewSide />
-            <NewsPreviewSide />
-            <NewsPreviewSide />
-            <NewsPreviewSide />
-            <NewsPreviewSide />
-            <NewsPreviewSide />
-            <NewsPreviewSide />
+            { newsListSide && newsListSide.map((news, index) => {
+                return(
+                  <NewsPreviewSide news={news} key={index}/>
+                )
+            })}
           </div>
         </div>
         : null}

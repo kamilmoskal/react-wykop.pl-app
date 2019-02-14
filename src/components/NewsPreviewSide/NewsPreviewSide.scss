@@ -4,6 +4,7 @@
     display: grid;
     grid: 64px / 113px auto;
     grid-column-gap: 10px;
+    overflow: hidden;
 
     .image-container{
         grid-row: 1 / 2;
