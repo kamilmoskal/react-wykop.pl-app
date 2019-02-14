@@ -8,6 +8,7 @@ import CommentsItem from '../../components/CommentsItem/CommentsItem';
 import PaginationBar from '../../components/PaginationBar/PaginationBar';
 import { connect } from 'react-redux';
 import { getNewsList, getSideNewsList } from '../../actions/getNewsListAction';
+import { getPostList } from '../../actions/getPostListAction';
 
 class Home extends Component {
 
@@ -20,13 +21,15 @@ class Home extends Component {
     this.fetchNewsList();
   }
   fetchNewsList(){
-    if (this.props.location.pathname === '/wykopalisko'){
-      this.props.getNewsList('Links/Upcoming/1')
+    if (this.props.location.pathname === '/'){
+      this.props.getNewsList('Links/Promoted/1');
+      this.props.getSideNewsList();
+    } else if (this.props.location.pathname === '/wykopalisko'){
+      this.props.getNewsList('Links/Upcoming/1');
     } else if (this.props.location.pathname === '/hity'){
-      this.props.getNewsList('Hits/Week')
-    } else if (this.props.location.pathname === '/'){
-      this.props.getNewsList('Links/Promoted/1')
-      this.props.getSideNewsList()
+      this.props.getNewsList('Hits/Week');
+    } else if (this.props.location.pathname === '/mikroblog'){
+      this.props.getPostList();
     }
   }
   render() {
@@ -46,7 +49,7 @@ class Home extends Component {
       title = 'Mikroblog';
       items = ['wszystkie wpisy','aktywne','gorące dyskusje','ulubione'];
     }
-    const { newsList, newsListSide } = this.props
+    const { newsList, newsListSide, postList } = this.props
     
     return (
       <div className="container">
@@ -68,11 +71,11 @@ class Home extends Component {
 
                 {pathname === '/mikroblog' ?
                 <React.Fragment>
-               {/*  <CommentsItem />
-                <CommentsItem />
-                <CommentsItem />
-                <CommentsItem />
-                <CommentsItem /> */}
+                  { postList && postList.map((comment, index) => {
+                      return(
+                        <CommentsItem comment={comment} key={index}/>
+                      )
+                    })}
                 <PaginationBar />
                 </React.Fragment>
                 : null}
@@ -90,13 +93,15 @@ const mapStateToProps = (state) => {
     return {
       newsList: state.newsList,
       newsListSide: state.newsListSide,
+      postList: state.postList,
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
       getNewsList: (which) => { dispatch(getNewsList(which)) },
-      getSideNewsList: () => { dispatch(getSideNewsList()) }
+      getSideNewsList: () => { dispatch(getSideNewsList()) },
+      getPostList: () => { dispatch(getPostList()) }
   }
 }
 

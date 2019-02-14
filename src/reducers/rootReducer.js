@@ -22,6 +22,15 @@ const rootReducer = (state = initState, action) => {
     } else if (action.type === 'SIDE_NEWS_LIST_ERROR') {
         console.log('FETCH_DATA_ERROR',action.error)
         return state;
+    } else if (action.type === 'POST_LIST'){
+        console.log('POST_LIST loaded', action.data)    
+        return {
+            ...state,
+            postList: action.data.data
+        };
+    } else if (action.type === 'POST_LIST_ERROR') {
+        console.log('FETCH_DATA_ERROR',action.error)
+        return state;
     } else if (action.type === 'SPECIFIC_NEWS') {
         console.log('SPECIFIC_NEWS loaded', action.data)
         return {

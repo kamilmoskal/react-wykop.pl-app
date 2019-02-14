@@ -3,6 +3,7 @@ import './CommentsItem.scss';
 import { Image } from 'semantic-ui-react';
 import moment from 'moment';
 import 'moment/locale/pl';
+import Parser from 'html-react-parser';
 
 const CommentsItem = (props) => {
   const { comment } = props;
@@ -35,7 +36,10 @@ const CommentsItem = (props) => {
         <div className={['comments-item__head__votes', commentVoteColor].join(' ')}>{comment.vote_count > 0 ? `+${comment.vote_count}`: comment.vote_count}</div>
       </div>
       <div className="comments-item__comment">
-          {comment.body}
+          {/* <div dangerouslySetInnerHTML={{__html: comment.body}} /> */}
+          {Parser(""+comment.body)}
+          <br/>
+          {comment.embed && <img src={comment.embed.preview} alt=""/>}
       </div>
     </div>
   )
